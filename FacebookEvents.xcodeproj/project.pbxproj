@@ -20,7 +20,6 @@
 		85151E8D1AE6C7970003B148 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E881AE6C7970003B148 /* Venue.swift */; };
 		851F4D271AE83DA900E45406 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F4D251AE83DA900E45406 /* FBSDKCoreKit.framework */; };
 		851F4D281AE83DA900E45406 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F4D261AE83DA900E45406 /* FBSDKLoginKit.framework */; };
-		851F4D2A1AE9916600E45406 /* LoginWithFacebookSerice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F4D291AE9916600E45406 /* LoginWithFacebookSerice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		85151E881AE6C7970003B148 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		851F4D251AE83DA900E45406 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		851F4D261AE83DA900E45406 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		851F4D291AE9916600E45406 /* LoginWithFacebookSerice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWithFacebookSerice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +139,6 @@
 			children = (
 				85151E851AE6C7970003B148 /* EventService.swift */,
 				85151E871AE6C7970003B148 /* JSONParser.swift */,
-				851F4D291AE9916600E45406 /* LoginWithFacebookSerice.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 			files = (
 				85151E661AE6C73D0003B148 /* EventTableViewController.swift in Sources */,
 				85151E8A1AE6C7970003B148 /* EventDetails.swift in Sources */,
-				851F4D2A1AE9916600E45406 /* LoginWithFacebookSerice.swift in Sources */,
 				85151E8C1AE6C7970003B148 /* JSONParser.swift in Sources */,
 				85151E8D1AE6C7970003B148 /* Venue.swift in Sources */,
 				85151E891AE6C7970003B148 /* Event.swift in Sources */,

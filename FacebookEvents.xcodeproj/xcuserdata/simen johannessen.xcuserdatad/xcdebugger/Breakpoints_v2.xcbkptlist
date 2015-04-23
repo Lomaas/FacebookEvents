@@ -63,7 +63,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "login(_:errorHandler:)"
+            landmarkName = "login(_:userCancelled:errorHandler:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FacebookEvents/LoginWithFacebookSerice.swift"
+            timestampString = "451516667.380332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "login(_:userCancelled:errorHandler:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
