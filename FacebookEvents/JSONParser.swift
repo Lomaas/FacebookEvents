@@ -34,8 +34,7 @@ struct JSONParser {
         return Event(description: "", title: name, location: location, startTime: startTime, eventId: eventId, myStatus: status)
     }
     
-    
-    // TASK - implementer denne ferdig
+    // Task for students - finish this up
     static func parseEventDetails(eventDetails: [NSObject: AnyObject]) -> EventDetails {
         return EventDetails(eventId: "test")
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class EventsTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,45 +18,17 @@ class EventsTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         if FBSDKAccessToken.currentAccessToken() == nil {
-            println(" start login up")
-            self.login()
+            println("Start login with Facebook Service")
+
+            LoginWithFacebookService.login({ () -> Void in
+                // Fetch events here
+            }, errorHandler: { (error) -> Void in
+                // Display error for user
+            })
         }
         else {
-            println(" fetch events")
-            
-            fetchEvents()
-//            EventService.fetchEvent("415432738605686", successHandler: { (event, venue) -> Void in
-//                
-//            }, errorHandler: { (error) -> Void in
-//                
-//            })
+            println("Is already signed in")
         }
-    }
-    
-    private func fetchEvents() {
-        EventService.fetchEvents(successHandler: { (events) -> Void in
-            println("success")
-            }) { (error) -> Void in
-                println("error")
-        }
-    }
-    
-    private func login() {
-        let manger = FBSDKLoginManager()
-        let permissions = ["public_profile", "email"]
-        
-        manger.logInWithReadPermissions(permissions, handler: { (result, error) -> Void in
-            if error != nil {
-                println("error")
-            }
-            if result.isCancelled {
-                println("User cancelled \(result)")
-            }
-            else {
-                println("Success ful granted")
-                self.fetchEvents()
-            }
-        })
     }
 }
 

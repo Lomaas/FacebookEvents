@@ -11,7 +11,7 @@ struct EventService {
     static func fetchEvents(query: String = "Oslo", successHandler: (events: Array<Event>) -> Void, errorHandler: (error: NSError) -> Void) {
         let request = FBSDKGraphRequest(graphPath: "/search?q=\(query)&type=event", parameters: nil)
         request.startWithCompletionHandler { (connection, result, error) -> Void in
-            println("Completion handler \(result)")
+            println("Completion handler fetchEvents \(result)")
             
             if error != nil {
                 println("FailedFetchEvent \(error)")
@@ -23,7 +23,7 @@ struct EventService {
                 
                 for i in 0...data.count - 1 {
                     let valueDict : NSDictionary = data[i] as! NSDictionary
-                    println("Res: \(valueDict)")
+                    println("Event: \(valueDict)")
                     let newEvent = JSONParser.parseEvent(valueDict)
                     events.append(newEvent)
                 }
@@ -37,7 +37,7 @@ struct EventService {
         println("EventID: \(eventId)")
         let request = FBSDKGraphRequest(graphPath: "/\(eventId)", parameters: nil)
         request.startWithCompletionHandler { (connection, result, error) -> Void in
-            println("Completion handler \(result)")
+            println("Completion handler fetchEvent \(result)")
             
             if error != nil {
                 println("FailedFetchEvent \(error)")

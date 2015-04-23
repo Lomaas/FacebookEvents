@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-// TASK - Implementer denne ferdig
+// Task for students - finish this up
 
 class EventDetails {
     let eventId: String
