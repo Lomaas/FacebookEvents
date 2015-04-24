@@ -18,8 +18,8 @@
 		85151E8B1AE6C7970003B148 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E851AE6C7970003B148 /* EventService.swift */; };
 		85151E8C1AE6C7970003B148 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E871AE6C7970003B148 /* JSONParser.swift */; };
 		85151E8D1AE6C7970003B148 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E881AE6C7970003B148 /* Venue.swift */; };
-		851F4D271AE83DA900E45406 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F4D251AE83DA900E45406 /* FBSDKCoreKit.framework */; };
-		851F4D281AE83DA900E45406 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851F4D261AE83DA900E45406 /* FBSDKLoginKit.framework */; };
+		852B32361AEA3D88006856CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852B32351AEA3D88006856CC /* FacebookSDK.framework */; };
+		852B32381AEA3EA9006856CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B32371AEA3EA9006856CC /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		85151E861AE6C7970003B148 /* FacebookEvents-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FacebookEvents-Bridging-Header.h"; sourceTree = "<group>"; };
 		85151E871AE6C7970003B148 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		85151E881AE6C7970003B148 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
-		851F4D251AE83DA900E45406 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		851F4D261AE83DA900E45406 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		852B32351AEA3D88006856CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		852B32371AEA3EA9006856CC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				851F4D281AE83DA900E45406 /* FBSDKLoginKit.framework in Frameworks */,
-				851F4D271AE83DA900E45406 /* FBSDKCoreKit.framework in Frameworks */,
+				852B32361AEA3D88006856CC /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +93,7 @@
 		85151E601AE6C73D0003B148 /* FacebookEvents */ = {
 			isa = PBXGroup;
 			children = (
-				851F4D251AE83DA900E45406 /* FBSDKCoreKit.framework */,
-				851F4D261AE83DA900E45406 /* FBSDKLoginKit.framework */,
+				852B32351AEA3D88006856CC /* FacebookSDK.framework */,
 				85151E631AE6C73D0003B148 /* AppDelegate.swift */,
 				85151E921AE6C8420003B148 /* bridge */,
 				85151E911AE6C7F60003B148 /* models */,
@@ -165,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				85151E651AE6C73D0003B148 /* EventTableViewController.swift */,
+				852B32371AEA3EA9006856CC /* LoginViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -273,6 +272,7 @@
 				85151E8A1AE6C7970003B148 /* EventDetails.swift in Sources */,
 				85151E8C1AE6C7970003B148 /* JSONParser.swift in Sources */,
 				85151E8D1AE6C7970003B148 /* Venue.swift in Sources */,
+				852B32381AEA3EA9006856CC /* LoginViewController.swift in Sources */,
 				85151E891AE6C7970003B148 /* Event.swift in Sources */,
 				85151E8B1AE6C7970003B148 /* EventService.swift in Sources */,
 				85151E641AE6C73D0003B148 /* AppDelegate.swift in Sources */,
@@ -409,6 +409,7 @@
 					"$(PROJECT_DIR)/FacebookEvents",
 				);
 				INFOPLIST_FILE = FacebookEvents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FacebookEvents/FacebookEvents-Bridging-Header.h";
@@ -424,6 +425,7 @@
 					"$(PROJECT_DIR)/FacebookEvents",
 				);
 				INFOPLIST_FILE = FacebookEvents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FacebookEvents/FacebookEvents-Bridging-Header.h";

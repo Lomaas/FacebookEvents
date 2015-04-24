@@ -8,36 +8,39 @@
 import Foundation
 
 struct EventService {
-    static func fetchEvents(query: String = "Oslo", successHandler: (events: Array<Event>) -> Void, errorHandler: (error: NSError) -> Void) {
-        let request = FBSDKGraphRequest(graphPath: "/search?q=\(query)&type=event", parameters: nil)
-        request.startWithCompletionHandler { (connection, result, error) -> Void in
-            println("Completion handler fetchEvents \(result)")
+    static func fetchEvents(q: String, successHandler: (events: Array<Event>) -> Void, errorHandler: (error: NSError) -> Void) {
+        var completionHandler = { connection, result, error in
+            println("Completion handler \(result)")
             
             if error != nil {
                 println("FailedFetchEvent \(error)")
                 errorHandler(error: error)
             }
             else {
-                var events = Array<Event>() // Population array
-                let data = result?.objectForKey("data") as! NSArray
+                var events = Array<Event>()
                 
-                for i in 0...data.count - 1 {
-                    let valueDict : NSDictionary = data[i] as! NSDictionary
-                    println("Event: \(valueDict)")
-                    let newEvent = JSONParser.parseEvent(valueDict)
+                for event in result?.data as! [FBGraphObject] {
+                    println("Res: \(event)")
+                    let newEvent = JSONParser.parseEvent(event)
                     events.append(newEvent)
                 }
                 
+                events.reverse()
                 successHandler(events: events)
             }
-        }
+            } as FBRequestHandler;
+        
+        let query = q == "" ? "oslo" : q
+        
+        FBRequestConnection.startWithGraphPath(
+            "/search?q=" + query + "&type=event",
+            completionHandler: completionHandler
+        );
     }
-
+    
     static func fetchEvent(eventId: String,  successHandler: (event: Event, venue: Venue?) -> Void, errorHandler: (error: NSError) -> Void) {
-        println("EventID: \(eventId)")
-        let request = FBSDKGraphRequest(graphPath: "/\(eventId)", parameters: nil)
-        request.startWithCompletionHandler { (connection, result, error) -> Void in
-            println("Completion handler fetchEvent \(result)")
+        var completionHandler = { connection, result, error in
+            println("Completion handler \(result)")
             
             if error != nil {
                 println("FailedFetchEvent \(error)")
@@ -53,7 +56,15 @@ struct EventService {
                 
                 successHandler(event: eventDetails, venue: venue)
             }
-        }
+            
+            } as FBRequestHandler
+        
+        println("EventID: \(eventId)")
+        
+        FBRequestConnection.startWithGraphPath(
+            "/" + eventId,
+            completionHandler: completionHandler
+        );
     }
     
 }

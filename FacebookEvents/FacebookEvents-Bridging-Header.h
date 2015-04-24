@@ -5,5 +5,4 @@
 //
 
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FacebookSDK/FacebookSDK.h>
